@@ -810,6 +810,8 @@
  * [30] 94 [10]: AUO A055TAN02 (59.05A30.002)
  * [30] 95 [10]: AUO A055TAN03 (59.05A30.003)
  * [40] 94 [10]: Sharp LQ055T1SW10 (Rev P)
+ * [E0] 01 [10]: Retro Remake SUPER5 OLED 720p (Rev 01)
+ * [E0] 05 [10]: Retro Remake SUPER5 OLED 1080p (Rev 01)
  *
  *
  * 7.0" OLED panels for Aula SKU:
@@ -828,31 +830,36 @@
  * 30h: AU Optronics
  * 40h: Sharp
  * 50h: Samsung
+ * E0h: Retro Remake
  *
  * Boards, Panel Size:
  * 0Fh: Icosa/Iowa, 6.2"
- * 10h: Hoag,       5.5"
- * 20h: Aula,       7.0"
+ * 10h: Hoag,    5.5"
+ * 20h: Aula,    7.0"
  */
 
 enum
 {
-	PANEL_JDI_XXX062M     = 0x10,
-	PANEL_JDI_LAM062M109A = 0x0910,
-	PANEL_JDI_LPM062M326A = 0x2610,
-	PANEL_INL_P062CCA_AZ1 = 0x0F20,
-	PANEL_AUO_A062TAN01   = 0x0F30,
-	PANEL_INL_2J055IA_27A = 0x1020,
-	PANEL_AUO_A055TAN01   = 0x1030,
-	PANEL_SHP_LQ055T1SW10 = 0x1040,
-	PANEL_SAM_AMS699VC01  = 0x2050,
+        PANEL_JDI_XXX062M   = 0x10,
+        PANEL_JDI_LAM062M109A = 0x0910,
+        PANEL_JDI_LPM062M326A = 0x2610,
+        PANEL_INL_P062CCA_AZ1 = 0x0F20,
+        PANEL_AUO_A062TAN01  = 0x0F30,
+        PANEL_INL_2J055IA_27A = 0x1020,
+        PANEL_AUO_A055TAN01  = 0x1030,
+        PANEL_SHP_LQ055T1SW10 = 0x1040,
+        PANEL_SAM_AMS699VC01 = 0x2050,
 
-	// Found on 6/2" clones. Unknown markings. Quality seems JDI like. Has bad low backlight scaling. ID: [83] 94 [0F].
-	PANEL_OEM_CLONE_6_2   = 0x0F83,
-	// Found on 5.5" clones with AUO A055TAN02 (59.05A30.001) fake markings.
-	PANEL_OEM_CLONE_5_5   = 0x00B3,
-	// Found on 5.5" clones with AUO A055TAN02 (59.05A30.001) fake markings.
-	PANEL_OEM_CLONE       = 0x0000
+        // Found on 6/2" clones. Unknown markings. Quality seems JDI like. Has bad low backlight scaling. ID: [83] 94 [0F].
+        PANEL_OEM_CLONE_6_2  = 0x0F83,
+        // Found on 5.5" clones with AUO A055TAN02 (59.05A30.001) fake markings.
+        PANEL_OEM_CLONE_5_5  = 0x00B3,
+        // Found on 5.5" clones with AUO A055TAN02 (59.05A30.001) fake markings.
+        PANEL_OEM_CLONE    = 0x0000,
+        //Retro Remake 5.5" OLED 720p
+        RR_SUPER5_OLED_720P_REV01 = 0x1001E0,
+        //Retro Remake 5.5" OLED 1080p
+        RR_SUPER5_OLED_1080P_REV01 = 0x1005E0
 };
 
 void display_init();
